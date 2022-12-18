@@ -22,13 +22,7 @@ class AppRoutes {
     switch (settings.name) {
       case RoutName.main:
         return MaterialPageRoute(builder: (_) => MainPage());
-      case RoutName.third:
-        final args = settings.arguments as Map<String, dynamic>;
-        return MaterialPageRoute(
-          builder: (_) => ThirdScreenPage(
-            number: args['number'],
-          ),
-        );
+        
       case RoutName.first:
         final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
@@ -36,6 +30,7 @@ class AppRoutes {
             number: args['number'],
           ),
         );
+
       case RoutName.second:
         final args = settings.arguments as Map<String, dynamic>;
         return MaterialPageRoute(
@@ -43,6 +38,15 @@ class AppRoutes {
             number: args['number'],
           ),
         );
+
+      case RoutName.third:
+        final args = settings.arguments as Map<String, dynamic>;
+        return MaterialPageRoute(
+          builder: (_) => ThirdScreenPage(
+            number: args['number'],
+          ),
+        );
+
       default:
         return MaterialPageRoute(builder: (_) => Scaffold());
     }
